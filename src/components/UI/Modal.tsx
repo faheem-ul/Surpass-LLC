@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { RxCross2 } from "react-icons/rx";
+// import { RxCross2 } from "react-icons/rx";
 
 import Text from "./Text";
 

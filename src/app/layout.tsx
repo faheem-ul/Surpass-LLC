@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import { Bebas_Neue } from "next/font/google";
+// import { Bebas_Neue } from "next/font/google";
 
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -13,12 +13,12 @@ const montserrat = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-const bebasNeue = Bebas_Neue({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-bebasNeue",
-  weight: ["400"],
-});
+// const bebasNeue = Bebas_Neue({
+//   subsets: ["latin"],
+//   display: "swap",
+//   variable: "--font-bebasNeue",
+//   weight: ["400"],
+// });
 
 export const metadata: Metadata = {
   title: "Surpass LLC",

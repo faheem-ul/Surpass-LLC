@@ -4,7 +4,6 @@ import React from "react";
 
 import Text from "@/components/UI/Text";
 import useDisclosure from "@/components/UI/useDisclosure";
-import MyModal from "@/components/UI/Modal";
 
 interface Props {
   text: string;
@@ -12,7 +11,7 @@ interface Props {
 }
 
 const PolygonSvg: React.FC<Props> = ({ text, onClick }) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { onOpen } = useDisclosure();
   return (
     <div
       className="relative group flex justify-center items-center hover:text-white cursor-default"

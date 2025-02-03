@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 const useDisclosure = () => {
   const [isOpen, setisOpen] = useState(false);
