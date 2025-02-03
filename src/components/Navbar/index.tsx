@@ -92,10 +92,8 @@ const Navbar = () => {
                       <Link
                         href="/"
                         // onClick={() => setActiveTab("/")}
-                        className={`block text-[14px] font-montserrat font-normal leading-[17.07px] ${
-                          currentPath === "/"
-                            ? "font-semibold"
-                            : "text-[#151515]"
+                        className={`block text-[14px] font-montserrat font-normal leading-[17.07px] text-white ${
+                          currentPath === "/" ? "font-semibold" : "text-white"
                         }`}
                       >
                         Home
@@ -105,10 +103,10 @@ const Navbar = () => {
                       <Link
                         href="/about-us"
                         // onClick={() => setActiveTab("/about-us")}
-                        className={`block text-[14px] font-montserrat font-normal leading-[17.07px] ${
+                        className={`block text-[14px] font-montserrat font-normal leading-[17.07px] text-white ${
                           currentPath === "/about-us"
                             ? " font-semibold"
-                            : "text-[#151515]"
+                            : "text-white"
                         }`}
                       >
                         About us
@@ -118,10 +116,10 @@ const Navbar = () => {
                       <Link
                         href="/testimonials"
                         // onClick={() => setActiveTab("/testimonials")}
-                        className={`block text-[14px] font-montserrat font-normal leading-[17.07px] ${
+                        className={`block text-[14px] font-montserrat font-normal leading-[17.07px] text-white ${
                           currentPath === "/testimonials"
                             ? " font-semibold"
-                            : "text-[#151515]"
+                            : "text-white"
                         }`}
                       >
                         Testimonials
@@ -131,23 +129,23 @@ const Navbar = () => {
                       <Link
                         href="/who-we-are"
                         // onClick={() => setActiveTab("/who-we-are")}
-                        className={`block text-[14px] font-montserrat font-normal leading-[17.07px] ${
+                        className={`block text-[14px] font-montserrat font-normal leading-[17.07px] text-white ${
                           currentPath === "/who-we-are"
                             ? " font-semibold"
-                            : "text-[#151515]"
+                            : "text-white"
                         }`}
                       >
                         Who We Are
                       </Link>
                     </li>
-                    <li>
+                    <li className="bg-gradient-to-tr  from-[#0B619D] to-[#1197CE] rounded-[95px] w-[200px] h-[51px] flex justify-center items-center">
                       <Link
                         href="/contact-us"
                         // onClick={() => setActiveTab("/contact-us")}
-                        className={`block text-[14px] font-montserrat font-normal leading-[17.07px] ${
+                        className={`block text-[14px] font-montserrat font-normal leading-[17.07px] text-white ${
                           currentPath === "/contact-us"
                             ? " font-semibold"
-                            : "text-[#151515]"
+                            : "text-white"
                         }`}
                       >
                         Contact Us
