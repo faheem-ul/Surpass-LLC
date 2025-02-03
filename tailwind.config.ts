@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,11 +8,28 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        montserrat: ["var(--font-montserrat)"],
+        timesNewRoman: ["var(--font-timesNewRoman)"],
+      },
+      boxShadow: {
+        custom: "0px 4px 54px 0px rgba(102, 143, 165, 0.3)", // Custom shadow
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#30434D",
+        secondary: "#FFFFFF",
+        accentGreen: "#4FB848",
+      },
+      screens: {
+        "2xl": { max: "1535px" },
+        xl: { max: "1279px" },
+        lg: { max: "1023px" },
+        navsize: { max: "1180px" },
+        tab: { max: "991px" },
+        mob: { max: "768px" },
       },
     },
   },
   plugins: [],
-} satisfies Config;
+};
+export default config;
