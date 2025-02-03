@@ -16,9 +16,8 @@ const config: Config = {
         custom: "0px 4px 54px 0px rgba(102, 143, 165, 0.3)", // Custom shadow
       },
       colors: {
-        primary: "#30434D",
-        secondary: "#FFFFFF",
-        accentGreen: "#4FB848",
+        primary: "#1197CE",
+        secondary: "#0B619D",
       },
       screens: {
         "2xl": { max: "1535px" },

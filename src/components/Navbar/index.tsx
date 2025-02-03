@@ -43,7 +43,7 @@ const Navbar = () => {
     <>
       <nav className="relative min-h-[80px] z-50 w-full">
         <div className="flex justify-center items-center w-full min-h-[80px]">
-          <div className="relative max-w-[1232px] min-h-[80px] w-full flex flex-wrap items-center justify-between mx-auto py-4">
+          <div className="relative max-w-[1440px] min-h-[80px] w-full flex flex-wrap items-center justify-between mx-auto py-4">
             <div className="flex justify-between w-full gap-[35px] mob:px-5 pb-4">
               <Link
                 href="/"
@@ -82,7 +82,7 @@ const Navbar = () => {
                   } w-full md:block md:w-auto`}
                   id="navbar-default"
                 >
-                  <ul className="font-normal mob:absolute mob:top-[100px] items-center mob:px-4 mob:left-0 mob:w-full z-50 flex flex-col py-4 md:p-0 mt-4 gap-[50px] md:flex-row rtl:space-x-reverse md:mt-0 tab:bg-black">
+                  <ul className="font-normal mob:absolute mob:top-[100px] items-center mob:px-4 mob:left-0 mob:w-full z-50 flex flex-col py-4 md:p-0 mt-4 gap-[75px] md:flex-row rtl:space-x-reverse md:mt-0 tab:bg-black">
                     {/* <li>
                       <Link href="/" onClick={() => setActiveTab("/")} className={`block text-[14px] font-montserrat font-normal leading-[17.07px] ${activeTab === "/" ? "text-accentGreen font-semibold" : "text-[#151515]"}`}>
                         HOME
@@ -90,11 +90,50 @@ const Navbar = () => {
                     </li> */}
                     <li>
                       <Link
+                        href="/"
+                        // onClick={() => setActiveTab("/")}
+                        className={`block text-[14px] font-montserrat font-normal leading-[17.07px] ${
+                          currentPath === "/"
+                            ? "font-semibold"
+                            : "text-[#151515]"
+                        }`}
+                      >
+                        Home
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/about-us"
+                        // onClick={() => setActiveTab("/about-us")}
+                        className={`block text-[14px] font-montserrat font-normal leading-[17.07px] ${
+                          currentPath === "/about-us"
+                            ? " font-semibold"
+                            : "text-[#151515]"
+                        }`}
+                      >
+                        About us
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/testimonials"
+                        // onClick={() => setActiveTab("/testimonials")}
+                        className={`block text-[14px] font-montserrat font-normal leading-[17.07px] ${
+                          currentPath === "/testimonials"
+                            ? " font-semibold"
+                            : "text-[#151515]"
+                        }`}
+                      >
+                        Testimonials
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
                         href="/who-we-are"
                         // onClick={() => setActiveTab("/who-we-are")}
                         className={`block text-[14px] font-montserrat font-normal leading-[17.07px] ${
                           currentPath === "/who-we-are"
-                            ? "text-accentGreen font-semibold"
+                            ? " font-semibold"
                             : "text-[#151515]"
                         }`}
                       >
@@ -103,37 +142,17 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link
-                        href="/what-we-do"
-                        // onClick={() => setActiveTab("/what-we-do")}
+                        href="/contact-us"
+                        // onClick={() => setActiveTab("/contact-us")}
                         className={`block text-[14px] font-montserrat font-normal leading-[17.07px] ${
-                          currentPath === "/what-we-do"
-                            ? "text-accentGreen font-semibold"
+                          currentPath === "/contact-us"
+                            ? " font-semibold"
                             : "text-[#151515]"
                         }`}
                       >
-                        What We Do
+                        Contact Us
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        href="/careers"
-                        // onClick={() => setActiveTab("/careers")}
-                        className={`block text-[14px] font-montserrat font-normal leading-[17.07px] ${
-                          currentPath === "/careers"
-                            ? "text-accentGreen font-semibold"
-                            : "text-[#151515]"
-                        }`}
-                      >
-                        CAREERS AT TACTIQ
-                      </Link>
-                    </li>
-                    {/* <li className="xl:hidden">
-                      <Link href="/contact">
-                        <button className="uppercase px-[23px] h-[44px] rounded-[4px] bg-[#30434D] border-[#30434D] border text-[14px] font-montserrat font-bold leading-[25.5px] text-[#FFFFFF]">
-                          CONTACT US
-                        </button>
-                      </Link>
-                    </li> */}
                   </ul>
                 </div>
               </div>
