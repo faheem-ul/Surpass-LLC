@@ -35,7 +35,7 @@ const HomeHero = () => {
             <div className="w-full max-w-[50%] mob:max-w-full">
               <Text className="text-[60px] font-bold z-10 relative bg-gradient-to-r from-[#0B68A3] to-[#EEEEEE] text-transparent bg-clip-text">
                 Mutual Rapport & <br />
-                Surpass LLC
+                Surpass LLC ok
               </Text>
               <div className="w-[213px] border border-[#0B619D] mt-6 z-10 relative"></div>
               <Text className="text-white font-medium text-[22px] z-10 relative mt-[19px] mb-[77px]">
