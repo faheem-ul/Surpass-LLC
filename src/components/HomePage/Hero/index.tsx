@@ -33,9 +33,12 @@ const HomeHero = () => {
         <div className="w-full max-w-[1440px] flex justify-center items-center">
           <div className="w-full flex justify-center items-center mb-[222px] mob:flex-col">
             <div className="w-full max-w-[50%] mob:max-w-full">
-              <Text className="text-[60px] font-bold z-10 relative bg-gradient-to-r from-[#0B68A3] to-[#EEEEEE] text-transparent bg-clip-text">
-                Mutual Rapport & <br />
-                Surpass LLC ok
+              <Text className="text-[60px] font-Louis font-semibold z-10 relative text-white">
+                <span className="font-bebasNeue text-[70px] font-normal">
+                  Mutual Rapport{" "}
+                </span>
+                <span className="font-bold">&</span> <br />
+                <span className="text-[#1198CE]">Surpass LLC</span>
               </Text>
               <div className="w-[213px] border border-[#0B619D] mt-6 z-10 relative"></div>
               <Text className="text-white font-medium text-[22px] z-10 relative mt-[19px] mb-[77px]">

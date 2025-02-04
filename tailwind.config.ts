@@ -10,6 +10,8 @@ const config: Config = {
     extend: {
       fontFamily: {
         montserrat: ["var(--font-montserrat)"],
+        bebasNeue: ["var(--font-bebasNeue)"],
+        Louis: ["var(--font-Louis)"],
         timesNewRoman: ["var(--font-timesNewRoman)"],
       },
       boxShadow: {
