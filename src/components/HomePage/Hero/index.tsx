@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { StaticImageData } from "next/image";
 import Image from "next/image";
 
 import Text from "@/components/UI/Text";
@@ -7,19 +8,79 @@ import Button from "@/components/UI/Button";
 import MyModal from "@/components/UI/Modal";
 
 import PolygonSvg from "./PolygonSvg";
+
+import ourvalue from "@/public/images/home/ourvalue.png";
+import businessplan from "@/public/images/home/business-plan.png";
+import whychooseus from "@/public/images/home/whyshouldchoose.png";
+import mission from "@/public/images/home/mission.png";
 import bg from "@/public/images/bg.png";
+
+type ModalContent = {
+  text?: string;
+  image?: StaticImageData;
+};
 
 const HomeHero = () => {
   const [selectedText, setselectedText] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState<ModalContent | null>(null);
+
+  console.log(isModalOpen);
+
+  const modalContentMapping: Record<string, ModalContent> = {
+    "Chief Cloud Officer": {
+      // text: "Details about Chief Cloud Officer role...",
+      // image: ourvalue,
+    },
+    "Business Plan": {
+      // text: "Detailed business plans and strategy...",
+      image: businessplan,
+    },
+    "Construction Accounting": {
+      // text: "Information on construction accounting...",
+      // image: ourvalue,
+    },
+    "I .T": {
+      // text: "Information about IT services...",
+    },
+    "Construction Payroll": {
+      // text: "How we handle construction payroll...",
+    },
+    "Human Resources": {
+      // text: "Our approach to human resources...",
+    },
+    "Why You Should Choose Us ?": {
+      // text: "Reasons to choose our company...",
+      image: whychooseus,
+    },
+    Articles: {
+      // text: "Read our latest articles...",
+      // image: ourvalue,
+    },
+    "Our Values": {
+      // text: "Read our latest articles...",
+      image: ourvalue,
+    },
+    "The Mission": {
+      // text: "What we stand for...",
+      image: mission,
+    },
+  };
 
   const handleOpenModal = (text: string) => {
+    // console.log(text);
+    const content = modalContentMapping[text];
+    // console.log(content?.text);
     setIsModalOpen(true);
+    setModalContent(content);
+    // console.log(modalContent);
     setselectedText(text);
   };
   const handleCloseModal = () => {
     setIsModalOpen(false);
+    setselectedText("");
   };
+  // console.log(modalContent.text);
   return (
     <div className="relative w-full h-full z-10">
       <Image
@@ -33,12 +94,11 @@ const HomeHero = () => {
         <div className="w-full max-w-[1440px] flex justify-center items-center">
           <div className="w-full flex justify-center items-center mb-[222px] mob:flex-col">
             <div className="w-full max-w-[50%] mob:max-w-full">
-              <Text className="text-[60px] font-Louis font-semibold z-10 relative text-white">
-                <span className="font-bebasNeue text-[70px] font-normal">
-                  Mutual Rapport{" "}
-                </span>
-                <span className="font-bold">&</span> <br />
-                <span className="text-[#1198CE]">Surpass LLC</span>
+              <Text className="text-[60px] font-montserrat font-bold z-10 relative text-white">
+                Mutual Rapport &
+              </Text>
+              <Text className="text-[60px] font-montserrat z-10 relative mt-[-20px] text-[#1198CE] font-medium">
+                Surpass LLC
               </Text>
               <div className="w-[213px] border border-[#0B619D] mt-6 z-10 relative"></div>
               <Text className="text-white font-medium text-[22px] z-10 relative mt-[19px] mb-[77px]">
@@ -76,7 +136,7 @@ const HomeHero = () => {
                   text="Construction Accounting"
                   onClick={handleOpenModal}
                 />
-                <PolygonSvg text="I .T" />
+                <PolygonSvg text="I .T" onClick={handleOpenModal} />
               </div>
               <div
                 className="flex flex-col gap-2 relative top-[55px] left-[-25px]"
@@ -113,8 +173,8 @@ const HomeHero = () => {
               </div>
               <div
                 className="flex flex-col gap-2 relative bottom-[6px] left-[-73px]"
-                data-aos="fade-right"
-                data-aos-duration="1000"
+                data-aos="fade-left"
+                data-aos-duration="900"
                 data-aos-easing="ease-in-sine"
               >
                 <PolygonSvg text="Who We Are" onClick={handleOpenModal} />
@@ -124,8 +184,8 @@ const HomeHero = () => {
               </div>
               <div
                 className="flex flex-col gap-2 relative bottom-[5px] left-[-96px]"
-                data-aos="fade-right"
-                data-aos-duration="1100"
+                data-aos="fade-left"
+                data-aos-duration="800"
                 data-aos-easing="ease-in-sine"
               >
                 <PolygonSvg text="The Mission" onClick={handleOpenModal} />
@@ -134,8 +194,8 @@ const HomeHero = () => {
               </div>
               <div
                 className="flex flex-col gap-2 relative bottom-[-53px] left-[-120px]"
-                data-aos="fade-right"
-                data-aos-duration="1200"
+                data-aos="fade-left"
+                data-aos-duration="700"
                 data-aos-easing="ease-in-sine"
               >
                 <PolygonSvg text="" onClick={handleOpenModal} />
@@ -144,24 +204,34 @@ const HomeHero = () => {
               </div>
               <div
                 className="flex flex-col gap-2 relative bottom-[6px] left-[-145px]"
-                data-aos="fade-right"
-                data-aos-duration="1300"
+                data-aos="fade-left"
+                data-aos-duration="600"
                 data-aos-easing="ease-in-sine"
               >
                 <PolygonSvg text="" onClick={handleOpenModal} />
               </div>
               <MyModal
                 title={selectedText}
-                isOpen={isModalOpen}
+                isOpen={!!selectedText}
                 closeModal={handleCloseModal}
               >
-                <Text className="text-white font-medium text-[20px] mx-auto w-full mt-[26px] max-w-[421px] ">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry&apos;s
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book
+                <Text className="text-white relative z-10 font-medium text-[20px] mx-auto w-full mt-[26px] max-w-[421px] ">
+                  {modalContent?.text}
                 </Text>
+                {modalContent?.image && (
+                  <div className="mt-6">
+                    <Image
+                      src={modalContent.image}
+                      alt="Modal Content"
+                      // width={500}
+                      // height={300}
+                      className="object-cover px-5 pb-10"
+                      data-aos="fade-up"
+                      data-aos-duration="700"
+                      data-aos-easing="ease-in-sine"
+                    />
+                  </div>
+                )}
               </MyModal>
             </div>
           </div>

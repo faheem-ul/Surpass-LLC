@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import AosProvider from "@/providers/AosProvider";
 
 const montserrat = Montserrat({
@@ -78,6 +79,7 @@ export default function RootLayout({
         <AosProvider>
           <Navbar />
           {children}
+          <Footer />
         </AosProvider>
       </body>
     </html>

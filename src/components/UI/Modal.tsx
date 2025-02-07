@@ -58,15 +58,22 @@ const MyModal: React.FC<ModalProps> = ({
                     <RxCross2 className="text-[#34C4CA] text-[30px] font-bold" />
                   </button> */}
                 </div>
-                <Image
-                  src={modalSvg}
-                  alt="modal svg"
-                  className="mx-auto mt-[-80px] relative"
-                />
-                <div className="flex justify-center items-center absolute mt-[-90px] w-full">
-                  <Text className=" font-medium text-[12px] mob:text-[12px] leading-[18px] text-[#fff] text-center w-[100px] mob:leading-[45px]">
-                    {title}
-                  </Text>
+                <div
+                  className=""
+                  data-aos="fade-down"
+                  data-aos-duration="700"
+                  data-aos-easing="ease-in-sine"
+                >
+                  <Image
+                    src={modalSvg}
+                    alt="modal svg"
+                    className="mx-auto mt-[-80px] relative"
+                  />
+                  <div className="flex justify-center items-center absolute mt-[-90px] w-full">
+                    <Text className=" font-medium text-[12px] mob:text-[12px] leading-[18px] text-[#fff] text-center w-[100px] mob:leading-[45px]">
+                      {title}
+                    </Text>
+                  </div>
                 </div>
                 {children}
               </Dialog.Panel>
