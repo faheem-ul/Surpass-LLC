@@ -91,7 +91,7 @@ const HomeHero = () => {
         // height={424}
       />
       <div className="w-full h-full flex justify-center items-center px-5 bg-black pt-[68px] overflow-hidden z-10">
-        <div className="w-full max-w-[1440px] flex justify-center items-center">
+        <div className="w-full max-w-[1270px] flex justify-center items-center">
           <div className="w-full flex justify-center items-center mb-[222px] mob:flex-col">
             <div className="w-full max-w-[50%] mob:max-w-full">
               <Text className="text-[42px] font-bold z-10 relative text-white">
@@ -116,9 +116,9 @@ const HomeHero = () => {
                 </Button>
               </div>
             </div>
-            <div className="flex items-center gap-1 w-full max-w-[58%] mob:max-w-full relative">
+            <div className="flex items-center gap-1 w-full max-w-[54%] mob:max-w-full relative">
               <div
-                className="relative top-[60px] right-[-23px]"
+                className="relative top-[48px] right-[-19px]"
                 data-aos="fade-right"
                 data-aos-duration="600"
                 data-aos-easing="ease-in-sine"
@@ -129,7 +129,7 @@ const HomeHero = () => {
                 />
               </div>
               <div
-                className="flex flex-col gap-2"
+                className="flex flex-col"
                 data-aos="fade-right"
                 data-aos-duration="700"
                 data-aos-easing="ease-in-sine"
@@ -142,7 +142,7 @@ const HomeHero = () => {
                 <PolygonSvg text="I .T" onClick={handleOpenModal} />
               </div>
               <div
-                className="flex flex-col gap-2 relative top-[55px] left-[-25px]"
+                className="flex flex-col relative top-[48px] left-[-18px]"
                 data-aos="fade-right"
                 data-aos-duration="800"
                 data-aos-easing="ease-in-sine"
@@ -158,7 +158,7 @@ const HomeHero = () => {
                 />
               </div>
               <div
-                className="flex flex-col gap-2 relative top-[55px] left-[-50px]"
+                className="flex flex-col relative top-[48px] left-[-35px]"
                 data-aos="fade-right"
                 data-aos-duration="900"
                 data-aos-easing="ease-in-sine"
@@ -175,7 +175,7 @@ const HomeHero = () => {
                 />
               </div>
               <div
-                className="flex flex-col gap-2 relative bottom-[6px] left-[-73px]"
+                className="flex flex-col relative bottom-[-1px] left-[-52px]"
                 data-aos="fade-left"
                 data-aos-duration="900"
                 data-aos-easing="ease-in-sine"
@@ -186,7 +186,7 @@ const HomeHero = () => {
                 <PolygonSvg text="Q & A" onClick={handleOpenModal} />
               </div>
               <div
-                className="flex flex-col gap-2 relative bottom-[5px] left-[-96px]"
+                className="flex flex-col relative bottom-[0px] left-[-68px]"
                 data-aos="fade-left"
                 data-aos-duration="800"
                 data-aos-easing="ease-in-sine"
@@ -196,7 +196,7 @@ const HomeHero = () => {
                 <PolygonSvg text="" onClick={handleOpenModal} />
               </div>
               <div
-                className="flex flex-col gap-2 relative bottom-[-53px] left-[-120px]"
+                className="flex flex-col relative bottom-[-46px] left-[-84px]"
                 data-aos="fade-left"
                 data-aos-duration="700"
                 data-aos-easing="ease-in-sine"
@@ -206,7 +206,7 @@ const HomeHero = () => {
                 <PolygonSvg text="Articles" onClick={handleOpenModal} />
               </div>
               <div
-                className="flex flex-col gap-2 relative bottom-[6px] left-[-145px]"
+                className="flex flex-col relative bottom-[2px] left-[-101px]"
                 data-aos="fade-left"
                 data-aos-duration="600"
                 data-aos-easing="ease-in-sine"

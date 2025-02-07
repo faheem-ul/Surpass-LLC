@@ -16,7 +16,7 @@ import location from "@/public/images/footer/location.svg";
 const Footer = () => {
   return (
     <div className="bg-gradient-to-br from-[#033C8B] to-[#000000] text-white pt-10 pb-6">
-      <div className="max-w-[1440px] mx-auto px-5 ">
+      <div className="max-w-[1270px] mx-auto px-5 ">
         <div className="flex justify-between items-start gap-16">
           {/* Left Section - Logo and Description */}
           <div className="w-full max-w-[315px]">
@@ -66,7 +66,7 @@ const Footer = () => {
 
           {/* Right Section - Contact */}
           <div className="w-full max-w-[247px]">
-            <Text className="text-white text-[30px] font-semibold mb-[66px]">
+            <Text className="text-white text-[26px] font-semibold mb-[66px]">
               Get In Touch
             </Text>
             <div className="flex w-full gap-[24px] justify-start items-center">
@@ -90,8 +90,8 @@ const Footer = () => {
           </div>
 
           {/* Stay connected */}
-          <div className=" ">
-            <Text className="text-white text-[30px] font-semibold mb-[66px]">
+          <div className="relative right-[41px]">
+            <Text className="text-white text-[26px] font-semibold mb-[66px]">
               Stay Connected
             </Text>
 
@@ -101,7 +101,7 @@ const Footer = () => {
                 placeholder="connect@mrsurpass.com"
                 className="px-[18px] w-[252px] py-2 mr-[20px] rounded-[100px] absolute h-[38px] text-black text-[10px] font-Segoe"
               />
-              <Button className="bg-[#1197CD] w-[88px] text-[12px] absolute right-[-41px] h-[38px] rounded-r-[100px] text-white">
+              <Button className="bg-[#1197CD] w-[88px] text-[12px] absolute right-[-69px] h-[38px] rounded-r-[100px] text-white">
                 Subscribe
               </Button>
             </div>
