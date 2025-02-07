@@ -11,3 +11,8 @@
 .aos-init[data-aos][data-aos].aos-animate {
   transform: unset;
 }
+
+.custom-gradient-border {
+  border-image-source: linear-gradient(to right, #ff7e5f, #feb47b);
+  border-image-slice: 1;
+}

@@ -84,36 +84,39 @@ const HomeHero = () => {
   return (
     <div className="relative w-full h-full z-10">
       <Image
-        className="absolute top-[-180px] left-0 w-full h-full object-cover z-0"
+        className="absolute top-[-250px] left-0 w-full h-full object-cover z-0"
         src={bg}
         alt=""
-        width={1440}
-        height={424}
+        // width={1440}
+        // height={424}
       />
-      <div className="w-full h-full flex justify-center items-center px-5 bg-black pt-[169px] overflow-hidden z-10">
+      <div className="w-full h-full flex justify-center items-center px-5 bg-black pt-[68px] overflow-hidden z-10">
         <div className="w-full max-w-[1440px] flex justify-center items-center">
           <div className="w-full flex justify-center items-center mb-[222px] mob:flex-col">
             <div className="w-full max-w-[50%] mob:max-w-full">
-              <Text className="text-[60px] font-montserrat font-bold z-10 relative text-white">
+              <Text className="text-[42px] font-bold z-10 relative text-white">
                 Mutual Rapport &
               </Text>
-              <Text className="text-[60px] font-montserrat z-10 relative mt-[-20px] text-[#1198CE] font-medium">
+              <Text className="text-[72px] z-10 relative mt-[-20px] text-[#1198CE] font-medium">
                 Surpass LLC
               </Text>
-              <div className="w-[213px] border border-[#0B619D] mt-6 z-10 relative"></div>
-              <Text className="text-white font-medium text-[22px] z-10 relative mt-[19px] mb-[77px]">
+              <div className="w-[213px] border border-[#0B619D] mt-[26px] z-10 relative"></div>
+              <Text className="text-white font-normal text-[20px] z-10 relative mt-[19px] mb-[77px]">
                 Moving Forward Strategically!
               </Text>
               <div className="flex gap-5">
-                <Button className="w-[200px] h-[51px] text-white rounded-[90px] font-bold bg-gradient-to-r from-[#1197CE] to-[#0B619D]">
+                <Button className="w-[166px] h-[42px] text-white rounded-[90px] relative font-bold bg-gradient-to-b from-[#1197CE] to-[#0B619D]">
                   Get Started
                 </Button>
-                <Button className="w-[200px] h-[51px] font-bold bg-black rounded-[90px] border border-[#1199CF]">
-                  More Info.
+                <Button className="relative w-[166px] h-[42px] font-bold bg-black text-[#119AD0] rounded-[90px] p-[2px]">
+                  <span className="absolute inset-0 bg-gradient-to-r from-[#1199CF] to-[#0B619D] rounded-[90px]"></span>
+                  <span className="relative flex items-center justify-center w-full h-full bg-black rounded-[90px]">
+                    More Info.
+                  </span>
                 </Button>
               </div>
             </div>
-            <div className="flex items-center gap-1 w-full max-w-[61%] mob:max-w-full relative">
+            <div className="flex items-center gap-1 w-full max-w-[58%] mob:max-w-full relative">
               <div
                 className="relative top-[60px] right-[-23px]"
                 data-aos="fade-right"

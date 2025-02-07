@@ -16,9 +16,7 @@ const button = cva(
   {
     variants: {
       variant: {
-        primary: [
-          "bg-primary text-white font-semibold text-[20px] font-montserrat",
-        ],
+        primary: ["bg-primary text-white font-semibold text-[16px] font-Segoe"],
       },
       size: {
         small: ["py-4", "px-6"],
@@ -51,7 +49,7 @@ const Button: React.FC<ButtonProps> = ({
     disabled={isLoading}
     className={cn(
       button({ variant, size, className }),
-      "relative flex items-center justify-center"
+      "flex items-center justify-center"
     )}
     {...props}
   >

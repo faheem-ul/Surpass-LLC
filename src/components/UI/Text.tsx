@@ -19,7 +19,7 @@ const Text = forwardRef<HTMLHeadingElement | HTMLParagraphElement, Props>(
         <h1
           ref={ref}
           className={cn(
-            "font-montserrat text-[60px] font-bold text-primary leading-[66px] mob:text-[45px]",
+            "font-Segoe text-[60px] font-bold text-primary leading-[66px] mob:text-[45px]",
             className
           )}
           onClick={onclick}
@@ -35,7 +35,7 @@ const Text = forwardRef<HTMLHeadingElement | HTMLParagraphElement, Props>(
         <h2
           ref={ref}
           className={cn(
-            "font-montserrat text-[48px] font-semibold text-primary leading-[48px] mob:text-[35px]",
+            "font-Segoe text-[48px] font-semibold text-primary leading-[48px] mob:text-[35px]",
             className
           )}
           onClick={onclick}
@@ -48,7 +48,7 @@ const Text = forwardRef<HTMLHeadingElement | HTMLParagraphElement, Props>(
       <p
         ref={ref}
         className={cn(
-          "font-montserrat text-[16px] font-normal text-[#30434D]",
+          "font-Segoe text-[16px] font-normal text-[#30434D]",
           className
         )}
         onClick={onclick}

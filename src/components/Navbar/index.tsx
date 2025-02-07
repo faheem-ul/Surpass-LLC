@@ -41,7 +41,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="relative min-h-[80px] z-50 w-full">
+      <nav className="relative min-h-[80px] z-50 w-full mt-[55px]">
         <div className="flex justify-center items-center w-full min-h-[80px]">
           <div className="relative max-w-[1440px] min-h-[80px] w-full flex flex-wrap items-center justify-between mx-auto py-4">
             <div className="flex justify-between w-full gap-[35px] mob:px-5 pb-4">
@@ -84,7 +84,7 @@ const Navbar = () => {
                 >
                   <ul className="font-normal mob:absolute mob:top-[100px] items-center mob:px-4 mob:left-0 mob:w-full z-50 flex flex-col py-4 md:p-0 mt-4 gap-[75px] md:flex-row rtl:space-x-reverse md:mt-0 tab:bg-black">
                     {/* <li>
-                      <Link href="/" onClick={() => setActiveTab("/")} className={`block text-[14px] font-montserrat font-normal leading-[17.07px] ${activeTab === "/" ? "text-accentGreen font-semibold" : "text-[#151515]"}`}>
+                      <Link href="/" onClick={() => setActiveTab("/")} className={`block text-[14px] font-Segoe font-normal leading-[17.07px] ${activeTab === "/" ? "text-accentGreen font-semibold" : "text-[#151515]"}`}>
                         HOME
                       </Link>
                     </li> */}
@@ -92,7 +92,7 @@ const Navbar = () => {
                       <Link
                         href="/"
                         // onClick={() => setActiveTab("/")}
-                        className={`block text-[14px] font-montserrat font-normal leading-[17.07px] text-white ${
+                        className={`block text-[16px] font-Segoe font-normal leading-[17.07px] text-white ${
                           currentPath === "/" ? "font-semibold" : "text-white"
                         }`}
                       >
@@ -103,7 +103,7 @@ const Navbar = () => {
                       <Link
                         href="/about-us"
                         // onClick={() => setActiveTab("/about-us")}
-                        className={`block text-[14px] font-montserrat font-normal leading-[17.07px] text-white ${
+                        className={`block text-[16px] font-Segoe font-normal leading-[17.07px] text-white ${
                           currentPath === "/about-us"
                             ? " font-semibold"
                             : "text-white"
@@ -116,7 +116,7 @@ const Navbar = () => {
                       <Link
                         href="/testimonials"
                         // onClick={() => setActiveTab("/testimonials")}
-                        className={`block text-[14px] font-montserrat font-normal leading-[17.07px] text-white ${
+                        className={`block text-[16px] font-Segoe font-normal leading-[17.07px] text-white ${
                           currentPath === "/testimonials"
                             ? " font-semibold"
                             : "text-white"
@@ -129,7 +129,7 @@ const Navbar = () => {
                       <Link
                         href="/who-we-are"
                         // onClick={() => setActiveTab("/who-we-are")}
-                        className={`block text-[14px] font-montserrat font-normal leading-[17.07px] text-white ${
+                        className={`block text-[16px] font-Segoe font-normal leading-[17.07px] text-white ${
                           currentPath === "/who-we-are"
                             ? " font-semibold"
                             : "text-white"
@@ -138,11 +138,11 @@ const Navbar = () => {
                         Who We Are
                       </Link>
                     </li>
-                    <li className="bg-gradient-to-tr  from-[#0B619D] to-[#1197CE] rounded-[95px] w-[200px] h-[51px] flex justify-center items-center">
+                    <li className="bg-gradient-to-tr  from-[#0B619D] to-[#1197CE] rounded-[95px] w-[159px] h-[40px] flex justify-center items-center">
                       <Link
                         href="/contact-us"
                         // onClick={() => setActiveTab("/contact-us")}
-                        className={`block text-[14px] font-montserrat font-normal leading-[17.07px] text-white ${
+                        className={`block text-[15px] font-Segoe font-normal leading-[17.07px] text-white ${
                           currentPath === "/contact-us"
                             ? " font-semibold"
                             : "text-white"
@@ -186,7 +186,7 @@ const Navbar = () => {
                         key={path}
                         // onClick={() => handleMenuClick(path)}
                         // onClick={() => setActiveTab(path)}
-                        className={`block text-[20px] font-montserrat font-medium leading-[25.5px] ${
+                        className={`block text-[20px] font-Segoe font-medium leading-[25.5px] ${
                           currentPath === path
                             ? "text-accentGreen font-semibold"
                             : "text-[#FFFFFF]"
@@ -201,7 +201,7 @@ const Navbar = () => {
                     ))}
                     {/* <a
                           href="/contact"
-                          className="flex justify-center  text-[16px]  font-normal leading-7 text-[#FFFFFF] font-montserrat"
+                          className="flex justify-center  text-[16px]  font-normal leading-7 text-[#FFFFFF] font-Segoe"
                         >
                           <li className="hidden xl:block mt-5 list-items">
                             <button className=" hidden xl:block  px-[23px] py-[11px] rounded-[4px] bg-accentGreen text-[15px] font-inter font-medium leading-[25.5px] text-[#FFFFFF] ">

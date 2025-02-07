@@ -12,6 +12,7 @@ const config: Config = {
         montserrat: ["var(--font-montserrat)"],
         bebasNeue: ["var(--font-bebasNeue)"],
         Louis: ["var(--font-Louis)"],
+        Segoe: ["var(--font-Segoe)"],
         timesNewRoman: ["var(--font-timesNewRoman)"],
       },
       boxShadow: {
