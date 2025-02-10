@@ -6,6 +6,7 @@ import Image from "next/image";
 import Text from "@/components/UI/Text";
 import Button from "@/components/UI/Button";
 import MyModal from "@/components/UI/Modal";
+import Navbar from "@/components/Navbar";
 
 import PolygonSvg from "./PolygonSvg";
 
@@ -13,10 +14,10 @@ import ourvalue from "@/public/images/home/ourvalue.png";
 import businessplan from "@/public/images/home/business-plan.png";
 import whychooseus from "@/public/images/home/whyshouldchoose.png";
 import mission from "@/public/images/home/mission.png";
-import bg from "@/public/images/bg.png";
+import bg from "@/public/images/bg.webp";
 
 type ModalContent = {
-  text?: string;
+  text?: string | string[];
   image?: StaticImageData;
 };
 
@@ -29,7 +30,8 @@ const HomeHero = () => {
 
   const modalContentMapping: Record<string, ModalContent> = {
     "Chief Cloud Officer": {
-      // text: "Details about Chief Cloud Officer role...",
+      text: "Guide CFOs and construction controllers on how to leverage the virtual tools, shortage space, and technology (phones, computers, tablets) to  better manage resources, re-think the way the company operates and responds to risk. The service develops (or improving upon) the  company's digital accounting assets, security management, resource utilization, and offer maximum value to the owners, accounting staff, including an auditor portal, if necessary.",
+
       // image: ourvalue,
     },
     "Business Plan": {
@@ -49,7 +51,7 @@ const HomeHero = () => {
     "Human Resources": {
       // text: "Our approach to human resources...",
     },
-    "Why You Should Choose Us ?": {
+    "Why Choose Us": {
       // text: "Reasons to choose our company...",
       image: whychooseus,
     },
@@ -64,6 +66,21 @@ const HomeHero = () => {
     "The Mission": {
       // text: "What we stand for...",
       image: mission,
+    },
+
+    "Financial Resilience Manager": {
+      text: "A Financial Resilience Coordinator works on developing and achieving the company’s financial goals by providing guidance and advice on money management.This is a tailored financial service that focuses on the company’s debts, budgets, and cash flow needs to enable the company to make informed financial decisions as well as optimizing resources.",
+      // image: ourvalue,
+    },
+
+    "Backup Support": {
+      text: [
+        "Construction Accountant – transitionary period for the company where an accountant is not available but day-to-day tasks need to be handled. ",
+        "Payroll Processor – due to an employee’s family or medical leave of absence, employee terminates, or limited resources for special projects, the company needs temporary support.",
+        "Data Backlog – banking and credit card reconciliations are backed up or incomplete. Dedicated and skilled accountant is needed for the catch-up process.",
+        "Credit Card Data Upload into Sage – large volume of credit card transitions are unreconciled and need to be uploaded into Sage. Special Project, please contact us for additional information.",
+        "Other Services – a number of other events can occur for a company that result in a need for temporary assistance. Please contact us.",
+      ],
     },
   };
 
@@ -82,26 +99,34 @@ const HomeHero = () => {
   };
   // console.log(modalContent.text);
   return (
-    <div className="relative w-full h-full z-10">
+    <div className="relative w-full min-h-[100vh]">
       <Image
-        className="absolute top-[-250px] left-0 w-full h-full object-cover z-0"
+        className="absolute left-0 w-full h-full object-cover z-0"
         src={bg}
         alt=""
-        // width={1440}
-        // height={424}
+        width={1440}
+        height={424}
+        priority
+        // loading="lazy"
       />
-      <div className="w-full h-full flex justify-center items-center px-5 bg-black pt-[68px] overflow-hidden z-10">
+      <Navbar />
+      <div className="w-full h-full flex justify-center items-center px-5  pt-[68px] overflow-hidden z-10">
         <div className="w-full max-w-[1270px] flex justify-center items-center">
           <div className="w-full flex justify-center items-center mb-[222px] mob:flex-col">
-            <div className="w-full max-w-[50%] mob:max-w-full">
+            <div
+              className="w-full max-w-[50%] mob:max-w-full"
+              data-aos="fade-right"
+              data-aos-duration="700"
+              data-aos-easing="ease-in-sine"
+            >
               <Text className="text-[42px] font-bold z-10 relative text-white">
                 Mutual Rapport &
               </Text>
-              <Text className="text-[72px] z-10 relative mt-[-20px] text-[#1198CE] font-medium">
+              <Text className="text-[72px] z-10 relative mt-[-20px] text-[#1198CE] font-semibold">
                 Surpass LLC
               </Text>
               <div className="w-[213px] border border-[#0B619D] mt-[26px] z-10 relative"></div>
-              <Text className="text-white font-normal text-[20px] z-10 relative mt-[19px] mb-[77px]">
+              <Text className="text-white font-normal text-[20px] z-10 relative mt-[19px] mb-[40px]">
                 Moving Forward Strategically!
               </Text>
               <div className="flex gap-5">
@@ -118,7 +143,7 @@ const HomeHero = () => {
             </div>
             <div className="flex items-center gap-1 w-full max-w-[54%] mob:max-w-full relative">
               <div
-                className="relative top-[48px] right-[-19px]"
+                className="relative top-[48px] right-[-15px]"
                 data-aos="fade-right"
                 data-aos-duration="600"
                 data-aos-easing="ease-in-sine"
@@ -152,10 +177,7 @@ const HomeHero = () => {
                   onClick={handleOpenModal}
                 />
                 <PolygonSvg text="Human Resources" onClick={handleOpenModal} />
-                <PolygonSvg
-                  text="Why You Should Choose Us ?"
-                  onClick={handleOpenModal}
-                />
+                <PolygonSvg text="Why Choose Us" onClick={handleOpenModal} />
               </div>
               <div
                 className="flex flex-col relative top-[48px] left-[-35px]"
@@ -218,23 +240,33 @@ const HomeHero = () => {
                 isOpen={!!selectedText}
                 closeModal={handleCloseModal}
               >
-                <Text className="text-white relative z-10 font-medium text-[20px] mx-auto w-full mt-[26px] max-w-[421px] ">
-                  {modalContent?.text}
-                </Text>
-                {modalContent?.image && (
-                  <div className="mt-6">
-                    <Image
-                      src={modalContent.image}
-                      alt="Modal Content"
-                      // width={500}
-                      // height={300}
-                      className="object-cover px-5 pb-10"
-                      data-aos="fade-up"
-                      data-aos-duration="700"
-                      data-aos-easing="ease-in-sine"
-                    />
-                  </div>
-                )}
+                <div className=" no-scrollbar">
+                  {Array.isArray(modalContent?.text) ? (
+                    <ul className="text-white font-normal ml-[50px] text-[14px] list-decimal w-full mt-[26px] max-w-[421px] pb-14">
+                      {modalContent.text.map((point, index) => (
+                        <li className="mb-2" key={index}>
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : modalContent?.text ? (
+                    <Text className="text-white font-medium text-[14px] mx-auto w-full mt-[26px] max-w-[421px] pb-10">
+                      {modalContent?.text}
+                    </Text>
+                  ) : null}
+                  {modalContent?.image && (
+                    <div className="mt-6">
+                      <Image
+                        src={modalContent.image}
+                        alt="Modal Content"
+                        className="object-cover px-5 pb-10 w-[421px] mx-auto"
+                        data-aos="fade-up"
+                        data-aos-duration="700"
+                        data-aos-easing="ease-in-sine"
+                      />
+                    </div>
+                  )}
+                </div>
               </MyModal>
             </div>
           </div>

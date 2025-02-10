@@ -16,3 +16,19 @@
   border-image-source: linear-gradient(to right, #ff7e5f, #feb47b);
   border-image-slice: 1;
 }
+
+.delayed-z-index {
+  transition: z-index 0s linear 1s; /* Z-index changes after 1s, allowing scale transition to finish */
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}

@@ -7,7 +7,7 @@ const button = cva(
   [
     "px-6",
     "py-4",
-    "rounded-[4px]",
+
     "font-bold",
     "text-[20px]",
     "leading-[36px]",

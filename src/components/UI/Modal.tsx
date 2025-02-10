@@ -48,7 +48,7 @@ const MyModal: React.FC<ModalProps> = ({
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full relative max-w-[515px] min-h-[442px] mob:max-w-full transform  bg-[#74757AB2]/70 rounded-[35px] mob:rounded-[10px]">
+              <Dialog.Panel className="w-full relative max-w-[515px]  border-[4px] border-white max-h-[600px] mob:max-w-full transform  bg-[#74757AB2]/70 rounded-[35px] mob:rounded-[10px]">
                 <div className="w-full flex justify-end items-end">
                   {/* <button
                     type="button"
@@ -64,15 +64,17 @@ const MyModal: React.FC<ModalProps> = ({
                   data-aos-duration="700"
                   data-aos-easing="ease-in-sine"
                 >
-                  <Image
-                    src={modalSvg}
-                    alt="modal svg"
-                    className="mx-auto mt-[-80px] relative"
-                  />
-                  <div className="flex justify-center items-center absolute mt-[-90px] w-full">
-                    <Text className=" font-medium text-[12px] mob:text-[12px] leading-[18px] text-[#fff] text-center w-[100px] mob:leading-[45px]">
-                      {title}
-                    </Text>
+                  <div className="relative w-full flex justify-center">
+                    <Image
+                      src={modalSvg}
+                      alt="modal svg"
+                      className="mx-auto mt-[-80px] relative"
+                    />
+                    <div className="absolute inset-0 mt-[-80px] flex items-center justify-center">
+                      <Text className="font-bold text-[12px] mob:text-[12px] leading-[18px] text-[#fff] text-center w-[100px]">
+                        {title}
+                      </Text>
+                    </div>
                   </div>
                 </div>
                 {children}

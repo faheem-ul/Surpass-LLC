@@ -4,7 +4,7 @@ import { Bebas_Neue } from "next/font/google";
 import localFont from "next/font/local";
 
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+// import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AosProvider from "@/providers/AosProvider";
 
@@ -111,7 +111,7 @@ export default function RootLayout({
         className={`${montserrat.variable} ${bebasNeue.variable} ${Louis.variable} ${Segoe.variable}`}
       >
         <AosProvider>
-          <Navbar />
+          {/* <Navbar /> */}
           {children}
           <Footer />
         </AosProvider>
