@@ -89,7 +89,6 @@ const HomeHero = () => {
   };
 
   const handleOpenModal = (text: string) => {
-    // console.log(text);
     const content = modalContentMapping[text];
     // console.log(content?.text);
     setIsModalOpen(true);
