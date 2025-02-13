@@ -14,11 +14,11 @@ import ourvalue from "@/public/images/home/ourvalue.png";
 import businessplan from "@/public/images/home/business-plan.png";
 import whychooseus from "@/public/images/home/whyshouldchoose.png";
 import mission from "@/public/images/home/mission.png";
-import bg from "@/public/images/bg.webp";
 
 type ModalContent = {
   text?: string | string[];
   image?: StaticImageData;
+  video?: string;
 };
 
 const HomeHero = () => {
@@ -82,6 +82,10 @@ const HomeHero = () => {
         "Other Services – a number of other events can occur for a company that result in a need for temporary assistance. Please contact us.",
       ],
     },
+    Video: {
+      text: "Watch our introductory video.",
+      video: "/images/home/modal-video.mp4", // Update with your actual video path
+    },
   };
 
   const handleOpenModal = (text: string) => {
@@ -100,15 +104,17 @@ const HomeHero = () => {
   // console.log(modalContent.text);
   return (
     <div className="relative w-full min-h-[100vh]">
-      <Image
-        className="absolute left-0 w-full h-full object-cover z-0"
-        src={bg}
-        alt=""
-        width={1440}
-        height={424}
-        priority
-        // loading="lazy"
-      />
+      <video
+        className="absolute left-0 top-0 w-full h-full object-cover z-0"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/images/home/bg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
       <Navbar />
       <div className="w-full h-full flex justify-center items-center px-5  pt-[68px] overflow-hidden z-10">
         <div className="w-full max-w-[1270px] flex justify-center items-center">
@@ -233,37 +239,50 @@ const HomeHero = () => {
                 data-aos-duration="600"
                 data-aos-easing="ease-in-sine"
               >
-                <PolygonSvg text="" onClick={handleOpenModal} />
+                <PolygonSvg text="Video" onClick={handleOpenModal} />
               </div>
               <MyModal
                 title={selectedText}
                 isOpen={!!selectedText}
                 closeModal={handleCloseModal}
+                classname={`${
+                  modalContent?.video
+                    ? "max-w-[850px] px-12 pb-10"
+                    : "max-w-[515px]"
+                }`}
               >
-                <div className=" no-scrollbar">
-                  {Array.isArray(modalContent?.text) ? (
-                    <ul className="text-white font-normal ml-[50px] text-[14px] list-decimal w-full mt-[26px] max-w-[421px] pb-14">
-                      {modalContent.text.map((point, index) => (
-                        <li className="mb-2" key={index}>
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : modalContent?.text ? (
+                <div className="no-scrollbar">
+                  {modalContent?.text && !modalContent?.video && (
                     <Text className="text-white font-medium text-[14px] mx-auto w-full mt-[26px] max-w-[421px] pb-10">
                       {modalContent?.text}
                     </Text>
-                  ) : null}
+                  )}
+
                   {modalContent?.image && (
-                    <div className="mt-6">
+                    <div>
                       <Image
                         src={modalContent.image}
                         alt="Modal Content"
-                        className="object-cover px-5 pb-10 w-[421px] mx-auto"
+                        className="pb-[0px] rounded-b-[34px]"
                         data-aos="fade-up"
                         data-aos-duration="700"
                         data-aos-easing="ease-in-sine"
                       />
+                    </div>
+                  )}
+
+                  {modalContent?.video && (
+                    <div className="w-full flex justify-center items-center">
+                      <video
+                        className="w-full shadow-lg "
+                        controls
+                        autoPlay
+                        loop
+                        muted
+                      >
+                        <source src={modalContent.video} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
                     </div>
                   )}
                 </div>

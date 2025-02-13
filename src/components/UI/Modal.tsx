@@ -8,11 +8,13 @@ import { Dialog, Transition } from "@headlessui/react";
 import Text from "./Text";
 
 import modalSvg from "@/public/images/modal.svg";
+import { cn } from "@/lib/utils";
 
 interface ModalProps {
   title: string;
   children: React.ReactNode;
   isOpen: boolean;
+  classname: string;
   closeModal: () => void;
 }
 
@@ -21,6 +23,7 @@ const MyModal: React.FC<ModalProps> = ({
   children,
   isOpen,
   closeModal,
+  classname,
 }) => {
   return (
     <Transition appear show={isOpen} as={Fragment}>
@@ -48,7 +51,12 @@ const MyModal: React.FC<ModalProps> = ({
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full relative max-w-[515px]  border-[4px] border-white max-h-[600px] mob:max-w-full transform  bg-[#74757AB2]/70 rounded-[35px] mob:rounded-[10px]">
+              <Dialog.Panel
+                className={cn(
+                  "w-full relative max-w-[515px]  border-[4px] border-white max-h-[600px] mob:max-w-full transform  bg-[#74757AB2]/70 rounded-[35px] mob:rounded-[10px]",
+                  classname
+                )}
+              >
                 <div className="w-full flex justify-end items-end">
                   {/* <button
                     type="button"
