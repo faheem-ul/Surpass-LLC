@@ -6,6 +6,7 @@ import Image from "next/image";
 import Text from "@/components/UI/Text";
 import Button from "@/components/UI/Button";
 import MyModal from "@/components/UI/Modal";
+import Navbar from "@/components/Navbar";
 
 import PolygonSvg from "./PolygonSvg";
 
@@ -13,11 +14,11 @@ import ourvalue from "@/public/images/home/ourvalue.png";
 import businessplan from "@/public/images/home/business-plan.png";
 import whychooseus from "@/public/images/home/whyshouldchoose.png";
 import mission from "@/public/images/home/mission.png";
-import bg from "@/public/images/bg.png";
 
 type ModalContent = {
-  text?: string;
+  text?: string | string[];
   image?: StaticImageData;
+  video?: string;
 };
 
 const HomeHero = () => {
@@ -29,7 +30,8 @@ const HomeHero = () => {
 
   const modalContentMapping: Record<string, ModalContent> = {
     "Chief Cloud Officer": {
-      // text: "Details about Chief Cloud Officer role...",
+      text: "Guide CFOs and construction controllers on how to leverage the virtual tools, shortage space, and technology (phones, computers, tablets) to  better manage resources, re-think the way the company operates and responds to risk. The service develops (or improving upon) the  company's digital accounting assets, security management, resource utilization, and offer maximum value to the owners, accounting staff, including an auditor portal, if necessary.",
+
       // image: ourvalue,
     },
     "Business Plan": {
@@ -49,7 +51,7 @@ const HomeHero = () => {
     "Human Resources": {
       // text: "Our approach to human resources...",
     },
-    "Why You Should Choose Us ?": {
+    "Why Choose Us": {
       // text: "Reasons to choose our company...",
       image: whychooseus,
     },
@@ -65,10 +67,28 @@ const HomeHero = () => {
       // text: "What we stand for...",
       image: mission,
     },
+
+    "Financial Resilience Manager": {
+      text: "A Financial Resilience Coordinator works on developing and achieving the company’s financial goals by providing guidance and advice on money management.This is a tailored financial service that focuses on the company’s debts, budgets, and cash flow needs to enable the company to make informed financial decisions as well as optimizing resources.",
+      // image: ourvalue,
+    },
+
+    "Backup Support": {
+      text: [
+        "Construction Accountant – transitionary period for the company where an accountant is not available but day-to-day tasks need to be handled. ",
+        "Payroll Processor – due to an employee’s family or medical leave of absence, employee terminates, or limited resources for special projects, the company needs temporary support.",
+        "Data Backlog – banking and credit card reconciliations are backed up or incomplete. Dedicated and skilled accountant is needed for the catch-up process.",
+        "Credit Card Data Upload into Sage – large volume of credit card transitions are unreconciled and need to be uploaded into Sage. Special Project, please contact us for additional information.",
+        "Other Services – a number of other events can occur for a company that result in a need for temporary assistance. Please contact us.",
+      ],
+    },
+    Video: {
+      text: "Watch our introductory video.",
+      video: "/images/home/modal-video.mp4", // Update with your actual video path
+    },
   };
 
   const handleOpenModal = (text: string) => {
-    // console.log(text);
     const content = modalContentMapping[text];
     // console.log(content?.text);
     setIsModalOpen(true);
@@ -82,40 +102,53 @@ const HomeHero = () => {
   };
   // console.log(modalContent.text);
   return (
-    <div className="relative w-full h-full z-10">
-      <Image
-        className="absolute top-[-180px] left-0 w-full h-full object-cover z-0"
-        src={bg}
-        alt=""
-        width={1440}
-        height={424}
-      />
-      <div className="w-full h-full flex justify-center items-center px-5 bg-black pt-[169px] overflow-hidden z-10">
-        <div className="w-full max-w-[1440px] flex justify-center items-center">
+    <div className="relative w-full min-h-[100vh]">
+      <video
+        className="absolute left-0 top-0 w-full h-full object-cover z-0"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/images/home/bg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <Navbar />
+      <div className="w-full h-full flex justify-center items-center px-5  pt-[68px] overflow-hidden z-10">
+        <div className="w-full max-w-[1270px] flex justify-center items-center">
           <div className="w-full flex justify-center items-center mb-[222px] mob:flex-col">
-            <div className="w-full max-w-[50%] mob:max-w-full">
-              <Text className="text-[60px] font-montserrat font-bold z-10 relative text-white">
+            <div
+              className="w-full max-w-[50%] mob:max-w-full"
+              data-aos="fade-right"
+              data-aos-duration="700"
+              data-aos-easing="ease-in-sine"
+            >
+              <Text className="text-[42px] font-bold z-10 relative text-white">
                 Mutual Rapport &
               </Text>
-              <Text className="text-[60px] font-montserrat z-10 relative mt-[-20px] text-[#1198CE] font-medium">
+              <Text className="text-[72px] z-10 relative mt-[-20px] text-[#1198CE] font-semibold">
                 Surpass LLC
               </Text>
-              <div className="w-[213px] border border-[#0B619D] mt-6 z-10 relative"></div>
-              <Text className="text-white font-medium text-[22px] z-10 relative mt-[19px] mb-[77px]">
+              <div className="w-[213px] border border-[#0B619D] mt-[26px] z-10 relative"></div>
+              <Text className="text-white font-normal text-[20px] z-10 relative mt-[19px] mb-[40px]">
                 Moving Forward Strategically!
               </Text>
               <div className="flex gap-5">
-                <Button className="w-[200px] h-[51px] text-white rounded-[90px] font-bold bg-gradient-to-r from-[#1197CE] to-[#0B619D]">
+                <Button className="w-[166px] h-[42px] text-white rounded-[90px] relative font-bold bg-gradient-to-b from-[#1197CE] to-[#0B619D]">
                   Get Started
                 </Button>
-                <Button className="w-[200px] h-[51px] font-bold bg-black rounded-[90px] border border-[#1199CF]">
-                  More Info.
+                <Button className="relative w-[166px] h-[42px] font-bold bg-black text-[#119AD0] rounded-[90px] p-[2px]">
+                  <span className="absolute inset-0 bg-gradient-to-r from-[#1199CF] to-[#0B619D] rounded-[90px]"></span>
+                  <span className="relative flex items-center justify-center w-full h-full bg-black rounded-[90px]">
+                    More Info.
+                  </span>
                 </Button>
               </div>
             </div>
-            <div className="flex items-center gap-1 w-full max-w-[61%] mob:max-w-full relative">
+            <div className="flex items-center gap-1 w-full max-w-[54%] mob:max-w-full relative">
               <div
-                className="relative top-[60px] right-[-23px]"
+                className="relative top-[48px] right-[-15px]"
                 data-aos="fade-right"
                 data-aos-duration="600"
                 data-aos-easing="ease-in-sine"
@@ -126,7 +159,7 @@ const HomeHero = () => {
                 />
               </div>
               <div
-                className="flex flex-col gap-2"
+                className="flex flex-col"
                 data-aos="fade-right"
                 data-aos-duration="700"
                 data-aos-easing="ease-in-sine"
@@ -139,7 +172,7 @@ const HomeHero = () => {
                 <PolygonSvg text="I .T" onClick={handleOpenModal} />
               </div>
               <div
-                className="flex flex-col gap-2 relative top-[55px] left-[-25px]"
+                className="flex flex-col relative top-[48px] left-[-18px]"
                 data-aos="fade-right"
                 data-aos-duration="800"
                 data-aos-easing="ease-in-sine"
@@ -149,13 +182,10 @@ const HomeHero = () => {
                   onClick={handleOpenModal}
                 />
                 <PolygonSvg text="Human Resources" onClick={handleOpenModal} />
-                <PolygonSvg
-                  text="Why You Should Choose Us ?"
-                  onClick={handleOpenModal}
-                />
+                <PolygonSvg text="Why Choose Us" onClick={handleOpenModal} />
               </div>
               <div
-                className="flex flex-col gap-2 relative top-[55px] left-[-50px]"
+                className="flex flex-col relative top-[48px] left-[-35px]"
                 data-aos="fade-right"
                 data-aos-duration="900"
                 data-aos-easing="ease-in-sine"
@@ -172,7 +202,7 @@ const HomeHero = () => {
                 />
               </div>
               <div
-                className="flex flex-col gap-2 relative bottom-[6px] left-[-73px]"
+                className="flex flex-col relative bottom-[-1px] left-[-52px]"
                 data-aos="fade-left"
                 data-aos-duration="900"
                 data-aos-easing="ease-in-sine"
@@ -183,7 +213,7 @@ const HomeHero = () => {
                 <PolygonSvg text="Q & A" onClick={handleOpenModal} />
               </div>
               <div
-                className="flex flex-col gap-2 relative bottom-[5px] left-[-96px]"
+                className="flex flex-col relative bottom-[0px] left-[-68px]"
                 data-aos="fade-left"
                 data-aos-duration="800"
                 data-aos-easing="ease-in-sine"
@@ -193,7 +223,7 @@ const HomeHero = () => {
                 <PolygonSvg text="" onClick={handleOpenModal} />
               </div>
               <div
-                className="flex flex-col gap-2 relative bottom-[-53px] left-[-120px]"
+                className="flex flex-col relative bottom-[-46px] left-[-84px]"
                 data-aos="fade-left"
                 data-aos-duration="700"
                 data-aos-easing="ease-in-sine"
@@ -203,35 +233,58 @@ const HomeHero = () => {
                 <PolygonSvg text="Articles" onClick={handleOpenModal} />
               </div>
               <div
-                className="flex flex-col gap-2 relative bottom-[6px] left-[-145px]"
+                className="flex flex-col relative bottom-[2px] left-[-101px]"
                 data-aos="fade-left"
                 data-aos-duration="600"
                 data-aos-easing="ease-in-sine"
               >
-                <PolygonSvg text="" onClick={handleOpenModal} />
+                <PolygonSvg text="Video" onClick={handleOpenModal} />
               </div>
               <MyModal
                 title={selectedText}
                 isOpen={!!selectedText}
                 closeModal={handleCloseModal}
+                classname={`${
+                  modalContent?.video
+                    ? "max-w-[850px] px-12 pb-10"
+                    : "max-w-[515px]"
+                }`}
               >
-                <Text className="text-white relative z-10 font-medium text-[20px] mx-auto w-full mt-[26px] max-w-[421px] ">
-                  {modalContent?.text}
-                </Text>
-                {modalContent?.image && (
-                  <div className="mt-6">
-                    <Image
-                      src={modalContent.image}
-                      alt="Modal Content"
-                      // width={500}
-                      // height={300}
-                      className="object-cover px-5 pb-10"
-                      data-aos="fade-up"
-                      data-aos-duration="700"
-                      data-aos-easing="ease-in-sine"
-                    />
-                  </div>
-                )}
+                <div className="no-scrollbar">
+                  {modalContent?.text && !modalContent?.video && (
+                    <Text className="text-white font-medium text-[14px] mx-auto w-full mt-[26px] max-w-[421px] pb-10">
+                      {modalContent?.text}
+                    </Text>
+                  )}
+
+                  {modalContent?.image && (
+                    <div>
+                      <Image
+                        src={modalContent.image}
+                        alt="Modal Content"
+                        className="pb-[0px] rounded-b-[34px]"
+                        data-aos="fade-up"
+                        data-aos-duration="700"
+                        data-aos-easing="ease-in-sine"
+                      />
+                    </div>
+                  )}
+
+                  {modalContent?.video && (
+                    <div className="w-full flex justify-center items-center">
+                      <video
+                        className="w-full shadow-lg "
+                        controls
+                        autoPlay
+                        loop
+                        muted
+                      >
+                        <source src={modalContent.video} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  )}
+                </div>
               </MyModal>
             </div>
           </div>
