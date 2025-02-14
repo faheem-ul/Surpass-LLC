@@ -246,7 +246,7 @@ const HomeHero = () => {
                 closeModal={handleCloseModal}
                 classname={`${
                   modalContent?.video
-                    ? "max-w-[850px] px-12 pb-10"
+                    ? "max-w-[850px] px-12 pb-12"
                     : "max-w-[515px]"
                 }`}
               >
@@ -273,7 +273,7 @@ const HomeHero = () => {
                   {modalContent?.video && (
                     <div className="w-full flex justify-center items-center">
                       <video
-                        className="w-full shadow-lg "
+                        className="w-full rounded-[4px]"
                         controls
                         autoPlay
                         loop
