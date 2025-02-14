@@ -24,26 +24,14 @@ const PolygonSvg: React.FC<Props> = ({ text, onClick }) => {
     >
       {/* Background SVG (First SVG) */}
       <svg
-        className="transition-all w-[97px] h-[97px] relative group-hover:scale-[1.45] duration-1000 group-hover:fill-white group-hover:z-[100] origin-center"
+        className="transition-all w-[97px] h-[97px] relative group-hover:scale-[1.45] duration-1000 group-hover:z-[100] origin-center text-[#1196CD] group-hover:text-white"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 120 120"
-        style={{ overflow: "visible" }} // Ensures no clipping
+        style={{ overflow: "visible" }}
       >
-        <defs>
-          <linearGradient
-            id="gradient-fill"
-            x1="50%"
-            y1="0%"
-            x2="50%"
-            y2="100%"
-          >
-            <stop offset="0%" stopColor="#1196CD" />
-            <stop offset="100%" stopColor="#0B639F" />
-          </linearGradient>
-        </defs>
         <path
-          fill="url(#gradient-fill)"
-          className="group-hover:fill-white fill-[#1196CD] group-hover:duration-[250ms]"
+          fill="currentColor"
+          className="transition-all duration-100"
           d="M1.50859 58.5447C-0.283327 55.447 -0.283327 51.6279 1.50859 48.5302L26.6753 5.02431C28.4628 1.93438 31.7617 0.0315537 35.3314 0.0315536L85.6984 0.0315514C89.2681 0.0315512 92.567 1.93438 94.3545 5.0243L119.521 48.5302C121.313 51.6279 121.313 55.447 119.521 58.5447L94.3545 102.051C92.567 105.141 89.2681 107.043 85.6984 107.043L35.3314 107.043C31.7617 107.043 28.4628 105.141 26.6753 102.051L1.50859 58.5447Z"
         />
       </svg>
